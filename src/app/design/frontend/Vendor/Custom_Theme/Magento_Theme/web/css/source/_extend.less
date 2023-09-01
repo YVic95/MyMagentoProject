@@ -1,7 +1,19 @@
 & when (@media-common = true) {
     .header.content {
-        background: peachpuff;
+        background: rgb(250, 193, 186);
     }
 }
 
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    body {
+        background: whitesmoke;
+        .lib-font-size(20px);
+        .lib-line-height(24px);
+    }
+}
 
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    body {
+        background: rgb(179, 220, 179);
+    }
+}
