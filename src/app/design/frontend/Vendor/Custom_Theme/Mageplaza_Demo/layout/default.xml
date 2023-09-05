@@ -2,7 +2,15 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <block name="custom.block" template="Mageplaza_Demo::custom.phtml" />
+            <block name="custom.block" template="Mageplaza_Demo::custom.phtml">
+                <arguments>
+                    <argument name="string_val" xsi:type="string">String without translation</argument>
+                    <argument name="translate_string_val" xsi:type="string">String with translation</argument>
+                    <argument name="int_val" xsi:type="number">14000</argument>
+                    <argument name="bool_val" xsi:type="boolean">1</argument>
+                    <argument name="view_model" xsi:type="object">Mageplaza\Demo\ViewModel\MyViewModel</argument>
+                </arguments>
+            </block>
         </referenceContainer>
     </body>
 </page>
