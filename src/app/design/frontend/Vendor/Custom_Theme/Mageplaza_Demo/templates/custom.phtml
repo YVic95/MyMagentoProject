@@ -1,9 +1,25 @@
-<?php 
-    /** @var \Magento\Framework\View\Element\Template $block */
-    /** @var \Magento\Framework\Escaper $escaper */
-?>
 <?php
+    /** @var \Magento\Framework\Escaper $escaper */ 
     $title = __('Custom Title');
 ?>
 <h1><?= $escaper->escapeHtml($title); ?></h1>
+
+<?php
+    /** @var \Magento\Framework\View\Element\Template $block */
+    /** @var \Mageplaza\Demo\ViewModel\MyNewViewModel $viewModel*/
+    // Alternative way to get View Model is: 
+    // $viewModel = $block->getViewModel();
+    $viewModel = $block->getData('view_model');
+?>
+<h1><?= $escaper->escapeHtml($viewModel->getTitle()); ?></h1>
+
+<pre>
+    <?php 
+        print_r($block->getData()); 
+    ?>
+</pre>
+<?php
+    //echo $block->getTitle();
+?>
+ 
     
