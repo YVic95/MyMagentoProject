@@ -11,6 +11,12 @@
                     <argument name="view_model" xsi:type="object">Mageplaza\Demo\ViewModel\MyViewModel</argument>
                 </arguments>
             </block>
+            <block name="custom.parent.block" as="parent"  template="Mageplaza_Demo::parent.phtml">
+                <block name="custom.child.block" as="block" template="Mageplaza_Demo::child.phtml" />
+                <container name="custom.child.container" as="container" htmlTag="div" htmlClass="child_container">
+                    <block name="custom.second.child.block" template="Mageplaza_Demo::child.phtml" />
+                </container>
+            </block>
         </referenceContainer>
     </body>
 </page>
