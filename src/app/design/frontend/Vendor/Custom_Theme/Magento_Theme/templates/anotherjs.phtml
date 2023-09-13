@@ -1,0 +1,19 @@
+<?php 
+    /** @var \Magento\Framework\Escaper $escaper */ 
+    /** @var \Magento\Framework\View\Element\Template $block */
+    /** @var \Mageplaza\Demo\ViewModel\Locale $viewModel*/
+    $viewModel = $block->getData('view_model');
+?>
+
+<label for="js-calendar">Select date: </label>
+<input type="text" id="js-calendar" class="js-calendar" name="js-calendar">
+
+<script type="text/x-magento-init">
+    {
+        ".js-calendar": {
+            "Magento_Theme/js/custom-script": {
+                "firstDay": <?= $escaper->escapeJs($viewModel->getFirstDate()); ?>
+            }
+        }
+    }
+</script>
