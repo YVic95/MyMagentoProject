@@ -3,7 +3,7 @@
     <body>
         <referenceContainer name="content">
             <block name="js.block" template="Magento_Theme::js.phtml"/>
-            <block name="another.js.block" template="Magento_Theme::anotherjs.phtml">
+            <block name="another.js.block" template="Magento_Theme::slider.phtml">
                 <arguments>
                     <argument name="view_model" xsi:type="object">Mageplaza\Demo\ViewModel\Locale</argument>
                 </arguments>
