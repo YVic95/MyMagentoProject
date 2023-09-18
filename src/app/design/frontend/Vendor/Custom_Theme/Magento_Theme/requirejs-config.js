@@ -14,5 +14,11 @@ var config = {
             //deps: ['jquery'], // If Swiper depends on jQuery
             exports: 'Swiper' // Export the Swiper object
         }
+    },
+    config: {
+        'Magento_Theme/js/custom': {
+            valueFromRequireJs: false
+        },
+        mixins: {}
     }
 };
