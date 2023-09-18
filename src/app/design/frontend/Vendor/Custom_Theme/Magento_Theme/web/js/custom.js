@@ -1,7 +1,12 @@
 define([
+    'module',
     'matchMedia'
-], (mediaCheck) => {
-    return function() {
+], (module, mediaCheck) => {
+    return function(config) {
+        if(!module.config) console.log('Config does not exist')
+            else console.table(module.config());
+    
+        console.table(config);
         const displayOnDesktop = () => {
             console.log('Display on Desktop');
         }
