@@ -3,7 +3,8 @@ var config = {
         "*": {
             customScript: "Magento_Theme/js/custom-script",
             custom: "Magento_Theme/js/custom",
-            swiperScript: "Magento_Theme/js/swiper-script"
+            swiperScript: "Magento_Theme/js/swiper-script",
+            confirmationAlert: "Magento_Checkout/js/confirmation"
         }
     },
     paths: {
@@ -11,13 +12,16 @@ var config = {
     },
     shim: {
         "swiper": {
-            //deps: ['jquery'], // If Swiper depends on jQuery
             exports: 'Swiper' // Export the Swiper object
+        },
+        "confirmationAlert": {
+            deps: ['jquery']
         }
     },
     config: {
         'Magento_Theme/js/custom': {
-            valueFromRequireJs: false
+            valueFromRequireJs: false,
+            anotherValue: true
         },
         mixins: {}
     }
