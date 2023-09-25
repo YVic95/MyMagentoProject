@@ -8,6 +8,7 @@
                     <argument name="view_model" xsi:type="object">Mageplaza\Demo\ViewModel\Locale</argument>
                 </arguments>
             </block>
+            <block name="custom.widget" template="Magento_Theme::custom-widget.phtml"/>
         </referenceContainer>
     </body>
 </page>
