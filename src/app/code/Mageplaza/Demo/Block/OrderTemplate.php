@@ -8,8 +8,4 @@ class OrderTemplate extends Template
 {
     protected $_template = 'Mageplaza_Demo::custom.phtml';
 
-    public function getTitle()
-    {
-        return 'Custom title';
-    }
 }
