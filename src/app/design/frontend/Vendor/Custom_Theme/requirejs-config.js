@@ -23,6 +23,10 @@ var config = {
             valueFromRequireJs: false,
             anotherValue: true
         },
-        mixins: {}
+        mixins: {
+            'mage/validation': {
+                'Magento_Catalog/js/validation-mixin': true
+            }
+        }
     }
 };
