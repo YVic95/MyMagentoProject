@@ -3,6 +3,7 @@
     <body>
         <referenceContainer name="content">
             <block name="search.form" template="Magento_Catalog::form.phtml"/>
+            <block name="customer.block" template="Magento_Catalog::customer.phtml"/>
         </referenceContainer>
     </body>
 </page>
