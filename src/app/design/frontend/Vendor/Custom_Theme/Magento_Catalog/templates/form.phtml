@@ -1,18 +1,25 @@
-<form data-mage-init='{"validation":{}, "Magento_Catalog/js/validation-check-widget":{}}'>
+<?php
+    /** @var \Magento\Framework\View\Element\Template $block */
+    /** @var \Magento\Framework\Escaper $escaper */ 
+?>
+<form data-mage-init='{"validation":{}, "Magento_Catalog/js/widget":{}}'>
     <fieldset class="fieldset">
         <div class="field required">
-            <label for="promocode" class="label">Promocode</label>
+            <label for="country_id" class="label"><?= $escaper->escapeHtml(__('Country ID')) ?></label>
             <div class="control-panel">
-                <input id="promocode" 
+                <input id="country_id"
+                       name="country_id"  
                        type="text" 
-                       class="promocode-input" 
-                       data-validate="{required:true, 'validate-promocode': true}">
+                       class="country-input" 
+                       data-validate="{required:true}"
+                       placeholder="<?= $escaper->escapeHtmlAttr(__('UA')) ?>"
+                />
             </div>
         </div>   
     </fieldset>
     <div class="actions-toolbar">
         <div class="primary">
-            <button class="action primary" type="submit"><span>Submit</span></button>
+            <button class="action primary" type="submit"><span><?= $escaper->escapeHtml(__('Enter Country ID')) ?></span></button>
         </div>
     </div>
 </form>
