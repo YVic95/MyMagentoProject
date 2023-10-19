@@ -1,6 +1,7 @@
 define([
     'jquery',
     'Magento_Customer/js/customer-data',
+    'mage/cookies',
     'mage/translate',
     'jquery-ui-modules/widget'
 ], ($, customerData, $t) => {
@@ -8,6 +9,7 @@ define([
 
     $.widget('vendor.systemMessages', {
         _init() {
+            console.log(`Form key is: %c${$.mage.cookies.get('form_key')}`, 'color: blue');
             this._on(this.element, {
                 click: this.showMessages.bind(this)                    
             }); 
