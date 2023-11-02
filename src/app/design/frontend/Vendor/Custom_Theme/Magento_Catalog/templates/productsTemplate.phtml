@@ -6,3 +6,17 @@
         }
     }
 </script>
+<script class="custom-js-template" type="text/x-magento-template">
+    <h1><%- title %></h1>
+
+    <ul class="productsList">
+        <% _.each(products, product => { %>
+            <li class="productName">
+                <%- product.name %>
+                <br />
+                <%- product.qty %>
+            </li>
+        <% }); %>
+    </ul>
+    
+</script>
