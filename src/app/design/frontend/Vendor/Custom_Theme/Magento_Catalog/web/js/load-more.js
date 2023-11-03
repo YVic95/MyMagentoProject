@@ -9,8 +9,10 @@ define([
     $.widget('vendor.loadProductsWidget', {
         options: {
             selectors: {
-                list: '.products.wrapper .product-items'
-            }
+                list: '.products.wrapper .product-items',
+                listHolder: '.products.wrapper',
+            },
+            currentPage: 1 // Initialize currentPage to 1
         },
         _init() {
             console.log('Success');
@@ -18,19 +20,21 @@ define([
         },
 
         appendShowMoreButton() {
-            $(this.options.selectors.list).append(
-                $('<button/>', {
-                    text: $t('Show more'),
-                    click: this.getProductsList.bind(this)
-                })
-            );
+            const $showMoreButton = $('<button/>', {
+                text: $t('Show more'),
+                click: this.getProductsList.bind(this)
+            });
+            $(this.options.selectors.listHolder).append($showMoreButton);
         },
 
         getProductsList() {
             this.beforeAjax();
 
+            const nextPage = this.options.currentPage + 1;
+            const url = `${window.location.pathname}/?p=${nextPage}`;
+
             return storage
-                .get(`${window.location.pathname}/?p=2`)
+                .get(url)
                 .fail(this.onAjaxError.bind(this))
                 .done(this.onAjaxSuccess.bind(this))
                 .always(this.afterAjax.bind(this));
@@ -59,6 +63,8 @@ define([
             main.apply();
 
             $(this.options.selectors.list).find(`${needApplySelector}`).catalogAddToCart().removeClass(needApplySelector);
+
+            this.options.currentPage++;
         }
     });
 
