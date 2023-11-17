@@ -1,1 +1,27 @@
 <h1>Ui components</h1>
+<div id="custom" data-bind="scope: 'custom-component'">
+    <span data-bind="text: text"></span>   
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "custom-component": {
+                        "component": "Magento_Theme/js/view/custom-component"
+                    }
+                }
+            }
+        }
+    }
+</script>
+
+<!-- <script>
+    require(['knockout'], ko => {
+        const viewModel = function () {
+            this.text = 'Ui components will appear here!';
+        }
+
+        ko.applyBindings( new viewModel(), custom);
+    });
+</script> -->
