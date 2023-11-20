@@ -1,6 +1,23 @@
+<head>
+    <style>
+    .myDiv {
+    border: 5px blue;
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    background-color: lightblue;    
+    text-align: center;
+    }
+    </style>
+</head>
+
 <h1>Ui components</h1>
 <div id="custom" data-bind="scope: 'custom-component'">
-    <span data-bind="text: text"></span>   
+    <span data-bind="text: text"></span> 
+    <br/>
+    <!--ko template: getTemplate() -->
+        Component is loading, please wait...
+    <!--/ko -->
 </div>
 <script type="text/x-magento-init">
     {
@@ -8,7 +25,8 @@
             "Magento_Ui/js/core/app": {
                 "components": {
                     "custom-component": {
-                        "component": "Magento_Theme/js/view/custom-component"
+                        "component": "Magento_Theme/js/view/custom-component",
+                        "template": "Magento_Theme/div-template.html"
                     }
                 }
             }
