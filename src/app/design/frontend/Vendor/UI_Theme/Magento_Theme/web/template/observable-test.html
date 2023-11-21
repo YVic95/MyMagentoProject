@@ -1,0 +1,7 @@
+<p data-bind="if: isActive">Active element</p>
+<p data-bind="if: !isActive()">Element is not active</p>
+<p data-bind="text: text"></p>
+<ul data-bind="foreach: items">
+    <li data-bind="text: `${$data} ${$index() + 1}`">
+    </li>
+</ul>

@@ -1,13 +1,17 @@
 <head>
     <style>
-    .myDiv {
-    border: 5px blue;
-    width: 100px;
-    height: 100px;
-    margin-top: 20px;
-    background-color: lightblue;    
-    text-align: center;
-    }
+        .headerClass {
+            margin-top: 20px;
+            margin-bottom: 0px;
+        }
+        .myDiv {
+        border: 5px blue;
+        width: 100px;
+        height: 100px;
+        margin-top: 20px;
+        background-color: lightblue;    
+        text-align: center;
+        }
     </style>
 </head>
 
@@ -19,6 +23,13 @@
         Component is loading, please wait...
     <!--/ko -->
 </div>
+<div data-bind="scope: 'observables-component'">
+    <h1 class="headerClass" data-bind="text: header"></h1>
+    <br/>
+    <!--ko template: getTemplate() -->
+    Observable test component is loading, please wait...
+    <!--/ko -->
+</div>
 <script type="text/x-magento-init">
     {
         "*": {
@@ -27,6 +38,10 @@
                     "custom-component": {
                         "component": "Magento_Theme/js/view/custom-component",
                         "template": "Magento_Theme/div-template.html"
+                    },
+                    "observables-component": {
+                        "component": "Magento_Theme/js/view/observable-test",
+                        "template": "Magento_Theme/observable-test.html"
                     }
                 }
             }
