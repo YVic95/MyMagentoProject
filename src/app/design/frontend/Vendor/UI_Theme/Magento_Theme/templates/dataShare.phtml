@@ -1,0 +1,25 @@
+<div data-bind="scope: 'custom1'">
+    <span>TEST</span>
+    <!--ko template: getTemplate() --><!--/ko -->
+</div>
+<div data-bind="scope: 'custom2'">
+    <span>TEST2</span>
+    <!--ko template: getTemplate() --><!--/ko -->
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "custom1": {
+                        "component": "Magento_Theme/js/view/custom1"
+                    },
+                    "custom2": {
+                        "component": "Magento_Theme/js/view/custom2"
+                    }
+                }
+            }
+        }
+    }
+</script>
