@@ -1,4 +1,7 @@
-define(['uiComponent', 'ko'], (uiComponent, ko) => {
+define(['uiElement', 'ko'], (uiComponent, ko) => {
+
+    // Hierarchy: uiClass --> uiElement --> uiCollection/uiComponent 
+    // uiCollection=uiComponent --> look requirejs-config.js
     return uiComponent.extend({
         defaults: {
             text: "Default text from component #1",
@@ -17,6 +20,8 @@ define(['uiComponent', 'ko'], (uiComponent, ko) => {
             setTimeout(() => {
                 this.text ="Updated text from component #1";
             }, 2000);
+
+            console.log(this.__proto__);
         } 
     });
 })

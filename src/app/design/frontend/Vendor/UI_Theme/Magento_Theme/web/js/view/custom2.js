@@ -28,6 +28,8 @@ define(['uiComponent', 'ko'], (uiComponent, ko) => {
             setTimeout(() => {
                 this.text = "Congrats! It is updated text from component #2";
             }, 4000);
+
+            console.log(this.__proto__);
         },
         onTextUpdate(text) {
             console.log(text);
