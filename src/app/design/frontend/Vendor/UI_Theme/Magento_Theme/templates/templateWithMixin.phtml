@@ -1,0 +1,20 @@
+<div data-bind="scope: 'component-test1'">
+    <!--ko template: getTemplate() --><!--/ko -->
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "component-test1": {
+                        "component": "Magento_Theme/js/view/component-test1"
+                    },
+                    "component-test2": {
+                        "component": "Magento_Theme/js/view/component-test2"
+                    }
+                }
+            }
+        }
+    }
+</script>

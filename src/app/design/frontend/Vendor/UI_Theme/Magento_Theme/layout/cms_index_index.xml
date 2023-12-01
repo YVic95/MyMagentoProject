@@ -4,6 +4,7 @@
         <referenceContainer name="content">
             <block name="ui.block" template="Magento_Theme::ui.phtml"/>
             <block name="componentDataSharing.block" as="dataShare" template="Magento_Theme::dataShare.phtml"/>
+            <block name="blockWithMixin" template="Magento_Theme::templateWithMixin.phtml" />
         </referenceContainer>
     </body>
 </page>
