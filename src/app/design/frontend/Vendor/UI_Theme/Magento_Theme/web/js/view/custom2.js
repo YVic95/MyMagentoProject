@@ -29,7 +29,8 @@ define(['uiComponent', 'ko'], (uiComponent, ko) => {
                 this.text = "Congrats! It is updated text from component #2";
             }, 4000);
 
-            console.log(this.__proto__);
+            //console.log(this.__proto__);
+            console.log('COMPONENT NAME: ', this.name);
         },
         onTextUpdate(text) {
             console.log(text);
