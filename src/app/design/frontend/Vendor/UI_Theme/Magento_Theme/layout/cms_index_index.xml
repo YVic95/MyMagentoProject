@@ -2,10 +2,11 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <block name="ui.block" template="Magento_Theme::ui.phtml"/>
+            <!-- <block name="ui.block" template="Magento_Theme::ui.phtml"/>
             <block name="componentDataSharing.block" as="dataShare" template="Magento_Theme::dataShare.phtml"/>
             <block name="blockWithMixin" template="Magento_Theme::templateWithMixin.phtml" />
-            <block name="dynamiallyAddedChildren" template="Magento_Theme::dynamicBlock.phtml" />
+            <block name="dynamiallyAddedChildren" template="Magento_Theme::dynamicBlock.phtml" /> -->
+            <block name="customerForm" template="Magento_Theme::form.phtml" />
         </referenceContainer>
     </body>
 </page>
