@@ -1,0 +1,20 @@
+<h1>Customer Data</h1>
+<div data-bind="scope: 'form-component'">
+    <!--ko template: getTemplate() -->
+        Form is loading...
+    <!--/ko -->
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "form-component": {
+                        "component": "Magento_Theme/js/view/customer-form",
+                        "template": "Magento_Theme/form.html"
+                    }
+                }
+            }
+        }
+    }
+</script>

@@ -1,0 +1,7 @@
+<form data-bind="submit: pushData">
+    <input type="text" data-bind="textInput: promocode" placeholder="Enter your promocode"/>
+    <button>Submit</button>
+</form>
+<ul data-bind="foreach: items">
+    <li data-bind="text: $data"></li>
+</ul>
