@@ -4,25 +4,16 @@ define(['uiElement', 'ko'], (uiComponent, ko) => {
     // uiCollection=uiComponent --> look requirejs-config.js
     return uiComponent.extend({
         defaults: {
-            text: "Default text from component #1",
-            template: "Magento_Theme/data-share.html",
-            // The exports property is used to copy a local value to some external entity.
-            exports: {
-                text: "custom2:text"
+            template: 'Magento_Theme/dataShare',
+            text: 'Default text from component #1',
+            items: [],
+            imports: {
+                items: '${$.provider}:items'
             },
             tracks: {
-                text: true
+                text: true,
+                items: true
             }
-        },
-        initialize() {
-            this._super();
-
-            setTimeout(() => {
-                this.text ="Updated text from component #1";
-            }, 2000);
-
-            //console.log(this.__proto__);
-            console.log('COMPONENT NAME: ', this.name);
-        } 
+        }
     });
 })

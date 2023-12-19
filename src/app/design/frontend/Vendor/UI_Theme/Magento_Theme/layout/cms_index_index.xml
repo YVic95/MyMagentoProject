@@ -6,7 +6,32 @@
             <block name="componentDataSharing.block" as="dataShare" template="Magento_Theme::dataShare.phtml"/>
             <block name="blockWithMixin" template="Magento_Theme::templateWithMixin.phtml" />
             <block name="dynamiallyAddedChildren" template="Magento_Theme::dynamicBlock.phtml" /> -->
-            <block name="customerForm" template="Magento_Theme::form.phtml" />
+            <!-- <block name="customerForm" template="Magento_Theme::form.phtml" /> -->
+            <block name="componentDataSharing.block" as="dataShare" template="Magento_Theme::dataShare.phtml">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="custom1" xsi:type="array">
+                                <item name="component" xsi:type="string">Magento_Theme/js/view/custom1</item>
+                                <item name="template" xsi:type="string">Magento_Theme/dataShare</item>
+                                <item name="deps" xsi:type="array">
+                                    <item name="0" xsi:type="string">customProvider</item>
+                                </item>
+                                <item name="imports" xsi:type="array">
+                                    <item name="items" xsi:type="string"><![CDATA[${$.provider}:items]]></item>
+                                </item>
+                            </item>
+                            <item name="customProvider" xsi:type="array">
+                                <item name="component" xsi:type="string">uiElement</item>
+                                <item name="items" xsi:type="array">
+                                    <item name="0" xsi:type="string">item1</item>
+                                    <item name="1" xsi:type="string">item2</item>
+                                </item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </block>
         </referenceContainer>
     </body>
 </page>
